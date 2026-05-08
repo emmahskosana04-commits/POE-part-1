@@ -1,165 +1,198 @@
-/*===Global Styles===*/
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/* ===================================================================
+   PART 2 - WEBSITE STYLING USING CSS
+   Requirement 12: General rules first, specific rules after
+   =================================================================== */
+
+/* 1. WEB FONTS - Requirement 10: Non-system fonts */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500&display=swap');
+
+/* 2. GENERAL STYLES - Requirement 12: Apply to all pages */
+* {
+    box-sizing: border-box; /* Requirement 10: Positioning */
 }
+
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    line-height: 1.6;
-    color: #333;
-    background-color: #fdf9f6;
+    font-family: 'Poppins', Arial, sans-serif; /* Requirement 10: Web font */
+    margin: 0; /* Requirement 10: Positioning */
+    padding: 0; /* Requirement 10: Positioning */
+    line-height: 1.7; /* Requirement 10: Text spacing */
+    color: #333; /* Requirement 10: Text color */
+    background-color: #FFF8FC; /* Requirement 11: Decorative - brand color */
 }
-/*===Header & Navigation===*/
+
+/* 3. HEADER & NAV LAYOUT - Requirement 10: Positioning blocks */
 header {
-    background-color: #d4a5a5;
-    color: white;
-    padding: 20px;
-    text-align: center;
+    background-color: #FF69B4; /* Requirement 11: Decorative */
+    padding: 15px 0; /* Requirement 10: Padding */
+    position: sticky; /* Requirement 10: Positioning */
+    top: 0;
+    box-shadow: 0 2px 10px rgba(199, 21, 133, 0.3); /* Requirement 11: Decorative */
 }
-header img {
-    border-radius: 50%;
-    margin-bottom: 10px;
+
+nav {
+    max-width: 1200px; /* Requirement 11: Desktop size */
+    margin: 0 auto; /* Requirement 10: Margin for centering */
+    padding: 0 30px; /* Requirement 10: Padding */
+    display: flex; /* Requirement 10: Professional layout */
+    justify-content: space-between;
+    align-items: center;
 }
-header h1 {
-    font-size: 2.5rem;
-    margin-bottom: 15px;
+
+nav img {
+    border-radius: 50%; /* Requirement 11: Decorative */
 }
+
 nav ul {
     list-style: none;
     display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 20px;
-
+    gap: 25px; /* Requirement 10: Spacing */
+    margin: 0;
+    padding: 0;
 }
-nav ul li a {
+
+/* 4. LINK PSEUDO SELECTORS - Requirement 3 from earlier */
+nav a {
     color: white;
     text-decoration: none;
-    font-weight: bold;
-    padding: 8px 16px;
-    border-radius: 5px;
-    transition: background-color 0.3s;
+    font-weight: 500;
+    font-size: 16px; /* Requirement 10: Text size */
+    letter-spacing: 0.5px; /* Requirement 10: Text spacing */
+    padding: 10px 15px; /* Requirement 10: Padding */
+    border-radius: 6px; /* Requirement 11: Decorative */
+    transition: all 0.3s ease; /* Requirement 11: Decorative */
+}
 
+nav a:hover {
+    background-color: #C71585;
+    color: #FFF0F5;
 }
-nav ul li a:hover{
-    background-color: #b88b8b;
 
+nav a:active {
+    background-color: #8B008B;
 }
-/*===main Content===*/
-main{
-    max-width: 1200px;
-    margin: 30px auto;
-    padding: 0 20px;
+
+nav a:visited {
+    color: #FFE4E1;
 }
-section {
-    background-color: white;
-    margin-bottom: 30px;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0,0,0,1);
+
+/* 5. TYPOGRAPHY - Requirement 10: Control text */
+h1, h2, h3 {
+    font-family: 'Playfair Display', serif; /* Requirement 10: Web font */
+    color: #C71585; /* Requirement 11: Brand color */
+    font-weight: 700; /* Requirement 10: Font weight */
+    text-align: center;
+    margin-top: 30px; /* Requirement 10: Margin */
+    margin-bottom: 20px; /* Requirement 10: Margin */
 }
-he {
-    color: #d4a5a5;
-    margin-bottom: 20px;
-    font-size: 2rem;
-    border-bottom: 2px solid #f0e4e4;
-    padding-bottom: 10px;
+
+h1 {
+    font-size: 42px; /* Requirement 10: Text size */
 }
-h3 {
-    color: #b88b8b;
-    margin-top: 20px;
-    margin-bottom: 15px;
-    font-family: 1.5rem;
+
+h2 {
+    font-size: 32px;
 }
+
 p {
-    margin-bottom: 15px;
+    font-size: 16px; /* Requirement 10: Text size */
+    margin-bottom: 15px; /* Requirement 10: Spacing */
 }
-ul{
-    margin-left: 30px;
-    margin-bottom: 15px;
+
+/* 6. MAIN CONTENT LAYOUT - Requirement 10: Position content blocks */
+main {
+    max-width: 1200px; /* Requirement 11: Desktop size */
+    margin: 40px auto; /* Requirement 10: Margin */
+    padding: 0 30px; /* Requirement 10: Padding */
 }
-li{
-    margin-bottom: 8px;
+
+/* 7. GALLERY FLEXBOX LAYOUT - Requirement 10: Professional layout */
+section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px; /* Requirement 10: Spacing */
+    margin-bottom: 50px; /* Requirement 10: Margin */
 }
-/*===Services Table===*/
-table{
+
+/* 8. DECORATIVE IMAGE STYLING - Requirement 11 */
+main img {
+    border: 4px solid #FF69B4; /* Requirement 11: Borders */
+    border-radius: 12px; /* Requirement 11: Decorative */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15); /* Requirement 11: Decorative */
+    transition: transform 0.4s, box-shadow 0.4s;
+}
+
+main img:hover {
+    transform: translateY(-8px); /* Requirement 11: Decorative */
+    box-shadow: 0 8px 25px rgba(199, 21, 133, 0.4);
+}
+
+/* 9. FORM STYLING - Requirement 11: Decorative */
+form {
+    max-width: 600px;
+    margin: 0 auto; /* Requirement 10: Positioning */
+    background-color: white;
+    padding: 30px; /* Requirement 10: Padding */
+    border-radius: 10px; /* Requirement 11: Decorative */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1); /* Requirement 11: Decorative */
+}
+
+form label {
+    font-weight: 500; /* Requirement 10: Font weight */
+    color: #C71585;
+}
+
+form input, form textarea {
     width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
+    padding: 12px; /* Requirement 10: Padding */
+    margin: 8px 0 20px 0; /* Requirement 10: Margin */
+    border: 2px solid #FFB6C1; /* Requirement 11: Borders */
+    border-radius: 6px; /* Requirement 11: Decorative */
+    font-family: 'Poppins', sans-serif; /* Requirement 10: Web font */
+    font-size: 15px; /* Requirement 10: Text size */
 }
-th, td{
-    border: 1px solid #ddd;
-    padding: 12px;
-    text-align: left;
+
+form input:focus, form textarea:focus {
+    border-color: #FF69B4; /* Requirement 11: Decorative */
+    outline: none;
 }
-th{
-    background-color: #d4a5a5;
+
+form button {
+    background-color: #FF69B4; /* Requirement 11: Colors */
     color: white;
+    padding: 14px 30px; /* Requirement 10: Padding */
+    border: none;
+    border-radius: 6px; /* Requirement 11: Decorative */
+    font-size: 16px; /* Requirement 10: Text size */
+    font-weight: 600; /* Requirement 10: Font weight */
+    cursor: pointer;
+    transition: background-color 0.3s;
 }
-tr:nth-child(even) {
-    background-color: #fdf9f6
+
+form button:hover {
+    background-color: #C71585;
 }
-/*===Gallery Grid===*/
-.gallery-grid img{
-    width: 100%;
-    max-width: 300px;
-    height: 300px;
-    object-fit: cover;
-    margin: 10px;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgb(0, 0,0,0.2);
-    transition: transform 0.3s;
-}
-.gallery-grid img: :hover{
-    transform: scale(1.05)
-}
-/*===Forms & iframes===*/
-iframe{
-    max-width: 100%;
-    border-radius: 8px;
-    margin: 20px 0;
-}
-/*===Footer===*/
-footer{
-    background-color: #333;
+
+/* 10. FOOTER - Requirement 12: General rule */
+footer {
+    background-color: #C71585; /* Requirement 11: Decorative */
     color: white;
     text-align: center;
-    padding: 20px;
-    margin-top: 40px;
+    padding: 25px; /* Requirement 10: Padding */
+    margin-top: 60px; /* Requirement 10: Margin */
 }
-footer p{
-    margin: 5px 0;
+
+/* 11. SERVICES LIST STYLING - Requirement 12: Specific treatment */
+main ul {
+    max-width: 700px;
+    margin: 0 auto; /* Requirement 10: Positioning */
 }
-/*===Links & Buttons ===*/
-a{
-    color: #d4a5a5;
-}
-a:hover{
-    color: #b88b8b;
-}
-/*===Respinsive Design- Mobile ===*/
-@media (max-width: 768px) {
-    header h1{
-        font-size: 1.8rem;
-    }
-    nav ul {
-        flex-direction: column;
-        gap: 10px;
-    }
-    main {
-        padding: 0 10px;
-    }
-    section{
-        padding: 20px;
-    }
-    table{
-        font-size: 0. 9rem;
-    }
-    th, td{
-        padding: 8px;
-    }
-    iframe{
-        height: 600px;
-    }
+
+main li {
+    background-color: white;
+    margin: 15px 0; /* Requirement 10: Margin */
+    padding: 20px; /* Requirement 10: Padding */
+    border-left: 5px solid #FF69B4; /* Requirement 11: Decorative */
+    border-radius: 5px; /* Requirement 11: Decorative */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08); /* Requirement 11: Decorative */
 }
