@@ -1,2 +1,2 @@
-# POE-part-1
+# POE-part-2
 This is Glow Beauty Salon where beautiful things happen. This digital space serves a skilled beauty team in Bethal, Mpumalanga. The site features easy navigation, showcasing the salon's services (hair, nails,braids,cuts, and skin care). Fill in details using the form built for messages setting up an appointment and inquiries. Clean lines and soft tone, good for clients seeking top beauty services locally. 
