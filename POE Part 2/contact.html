@@ -5,21 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us - GLOW BEAUTY SALON </title>
     <link rel="stylesheet" href="style.css"> 
+    <meta name="description" content="Glow Beauty Salon Bethal offers professional hair, nails, braids and skincare. Book acrylic nails, manicures and facials today.">
+<meta name="keywords" content="beauty salon Bethal, nails Bethal, hair salon, acrylic nails">
+<!-- PUT SCRIPT HERE -->
+  <script src="script.js" defer></script>
 </head>
+
 <body>
-    <header> 
-        <nav>
-            <img src="images/logo.png" alt="Glow Beauty Salon Logo" width="100">
-        <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About Us</a></li>
-        <li><a href="services.html">Our Services</a></li>
-        <li><a href="gallery.html">Gallery</a></li>
-        <li><a href="contact.html">Contact Us</a></li>
-            
-        </ul>
-    </nav>
-    </header>
+    <header>
+  <div class="logo-left">
+    <img src="images/logo.png" alt="Glow Beauty Salon Logo">
+    <span class="org-name">Glow Beauty Salon</span>
+  </div>
+  
+  <div class="menu-icon" onclick="toggleMenu()">☰</div>  <!-- 3 lines appear here -->
+  
+  <nav>
+    <ul id="navMenu">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="contact.html">Contact Us</a></li>
+    </ul>
+  </nav>
+</header>
+
+    
     <main>
         <div class="card"> 
         <section>
@@ -53,14 +65,16 @@
         </section>
     </div>
     </main>
-           
+
+<!-- Footer with Live Date + Auto Year -->
 <footer>
-    <p>&copy;2026 - Glow Beauty Salon, Bethal. All rights reserved.</p>
-    <p>Contact: 079 440 7643 | info@glowbeautysalon.co.za</p>
+  <div class="footer-content">
+    <p><strong>Glow Beauty Salon</strong></p>
+    <p>10th Street, Bethal | Phone: 079 440 7643 | Email: info@glowbeautysalon.co.za</p>
+    
+    <p id="dateTime"></p> <!-- Live date/time updates here -->
+    <p>&copy;<span id="currentYear"></span> Glow Beauty Salon. All rights reserved.</p> <!-- Auto year -->
+  </div>
 </footer>
 </body>
 </html>
-
-
-
-        
