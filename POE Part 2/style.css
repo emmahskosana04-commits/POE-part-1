@@ -1,6 +1,17 @@
 /* ===== Google Fonts ===== */
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;600&display=swap');
 
+/* 1. Default = Desktop first */
+.menu-icon { display: none !important; }
+nav ul { display: flex; justify-content: center; gap: 40px; }
+
+/* 2. Mobile override = only when screen <768px */
+@media (max-width: 768px) {
+  .menu-icon { display: block !important; }
+  nav ul { display: none; flex-direction: column; }
+  nav ul.show { display: flex; }
+}
+
 /* ===== Base Styles ===== */
 body {
   font-family: 'Poppins', sans-serif;
@@ -229,142 +240,158 @@ nav ul {
   table { display: block; overflow-x: auto; }
   .card { width: 95%; padding: 20px; }
 }
-/* ===== Part 3: Mobile Responsiveness ===== */
-
-/* Desktop - nav shows horizontal, no hamburger */
-.menu-icon {
-  display: none; /* hidden on desktop */
-  font-size: 30px;
-  cursor: pointer;
-  color: #c2185b; /* pink for salon */
-  padding: 10px 20px;
-}
-
-nav ul {
-  display: flex; /* horizontal tabs */
-  justify-content: center;
-  gap: 30px;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-/* Tablet + Phone - screen < 768px = website minimizes */
-@media (max-width: 768px) {
-  
-  /* 1. 3 lines ☰ appear */
-  .menu-icon {
-    display: block;
-    text-align: center;
-  }
-  
-  /* 2. Nav hides until clicked */
-  nav ul {
-    display: none; /* hidden by default */
-    flex-direction: column; /* stack vertically */
-    background-color: #f8f8f8;
-    width: 100%;
-    gap: 0;
-  }
-  
-  /* 3. When ☰ clicked, JS adds "show" class */
-  nav ul.show {
-    display: flex;
-  }
-  
-  /* 4. Make content shrink to fit screen */
-  body {
-    padding: 0 10px; /* adds space on left + right sides */
-  }
-  
-  .card, .about-box {
-    width: 100%; /* full width instead of fixed 600px */
-    max-width: 500px;
-    margin: 20px auto;
-  }
-  
-  /* 5. Images shrink instead of overflow */
-  img {
-    max-width: 100%;
-    height: auto;
-  }
-  
-  /* 6. Table scrolls instead of breaking layout */
-  table {
-    display: block;
-    overflow-x: auto;
-    white-space: nowrap;
-  }
-}
-
-
-/* Reset + Basic styling for Glow Beauty Salon */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: Arial, sans-serif;
-  line-height: 1.6;
-  background-color: #fff5f8; /* light pink background */
-  color: #333;
-  padding: 0 15px;
-}
-
+/* HEADER - Logo on top, pink background */
 header {
-  background-color: #c2185b; /* dark pink */
-  color: white;
-  padding: 15px 0;
+  background: linear-gradient(135deg, #e91e63 0%, #f06292 100%);
+  padding: 40px 20px 20px;
   text-align: center;
 }
 
-.logo-left img { width: 80px; vertical-align: middle; }
-.org-name { font-size: 24px; font-weight: bold; margin-left: 10px; }
+.logo-left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
 
-.menu-icon { display: none; font-size: 30px; cursor: pointer; }
+.logo-left img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 4px solid white;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.org-name {
+  font-size: 36px;
+  font-weight: bold;
+  color: white;
+  margin: 0;
+  font-family: Georgia, serif;
+}
+
+/* NAV - Pink bar, horizontal links */
+nav {
+  background: #e91e63;
+  padding: 0;
+}
+
+.menu-icon {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+  padding: 10px 20px;
+  color: white;
+  background: #d81b60;
+  border: none;
+  width: 100%;
+  text-align: center;
+}
 
 nav ul {
   display: flex;
   justify-content: center;
   list-style: none;
-  gap: 25px;
-  padding: 10px 0;
-  background: #e91e63;
+  gap: 40px;
+  padding: 15px 0;
+  margin: 0;
 }
 
 nav ul li a {
   color: white;
   text-decoration: none;
-  padding: 8px 15px;
-  border-radius: 5px;
+  font-size: 18px;
+  padding: 8px 5px;
 }
 
-nav ul li a.active, nav ul li a:hover {
-  background: #ad1457;
+nav ul li a:hover, nav ul li a.active {
+  border-bottom: 2px solid white;
 }
 
-.card, .about-box {
-  background: white;
-  max-width: 800px;
-  margin: 30px auto;
-  padding: 30px;
-  border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+/* MOBILE - Hamburger menu */
+@media (max-width: 768px) {
+  .menu-icon {
+    display: block;
+  }
+  
+  nav ul {
+    display: none;
+    flex-direction: column;
+    gap: 0;
+    width: 100%;
+  }
+  
+  nav ul.show {
+    display: flex;
+  }
+  
+  nav ul li {
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid #f8bbd9;
+  }
+  
+  nav ul li a {
+    display: block;
+    padding: 15px;
+  }
 }
-
+/* FOOTER - Pink bar at bottom */
 footer {
-  background: #333;
+  background: #e91e63;
   color: white;
   text-align: center;
-  padding: 20px;
+  padding: 20px 10px;
   margin-top: 40px;
+  font-size: 16px;
 }
 
-/* Mobile menu */
-@media (max-width: 768px) {
-  .menu-icon { display: block; }
-  nav ul { display: none; flex-direction: column; gap: 0; }
-  nav ul.show { display: flex; }
+footer p {
+  margin: 5px 0;
 }
+
+#datetime {
+  font-weight: bold;
+  font-size: 18px;
+}
+.menu-icon { display: none; } /* Hide button on desktop */
+
+@media (max-width: 768px) {
+  .menu-icon { display: block; } /* Show button only on mobile */
+  nav ul { display: none; }
+  nav ul.show { display: flex; flex-direction: column; }
+}
+/* Mobile links = BLACK + bold */
+@media (max-width: 768px) {
+  nav ul {
+    background: white !important; /* Make dropdown background white so black shows */
+  }
+  
+  nav ul li a {
+    color: black !important;           /* Black text */
+    font-weight: 700 !important;       /* Bold */
+    font-size: 18px !important;        
+    padding: 15px !important;          
+    display: block;
+    text-align: center;
+    border-bottom: 1px solid #ddd;     /* Light gray line between links */
+    text-decoration: none;
+  }
+  
+  nav ul li a:hover,
+  nav ul li a.active {
+    background: #f2f2f2; /* Light gray highlight when tapped */
+    color: black !important;
+  }
+}
+nav ul li a {
+  color: black;
+  font-weight: 600;
+  font-size: 16px;
+  text-decoration: none;
+  padding: 10px 15px;
+}
+nav ul li a:hover {
+  color: #d63384; /* Pink highlight on hover for desktop */
+}
+.menu-icon { cursor: pointer; }

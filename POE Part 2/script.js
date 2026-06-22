@@ -6,10 +6,7 @@ function toggleMenu() {
 // 2. Live date SA format
 function updateDateTime() {
   const now = new Date();
-  document.getElementById('dateTime').innerText = now.toLocaleString('en-ZA');
+  document.getElementById("dateTime").innerText = now.toLocaleString();
 }
 setInterval(updateDateTime, 1000);
-updateDateTime();
 
-// 3. Auto year
-document.getElementById('currentYear').textContent = new Date().getFullYear();
